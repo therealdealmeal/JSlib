@@ -12,3 +12,22 @@ function reverse(arr) {
 
 
 reverse([80,65,18,15,48,74]);
+
+
+
+
+function reverse(string) {
+  count = 0;
+  string = string.split("");
+
+  for(i=string.length-1; i>Math.floor(string.length/2); i--) {
+    var temp = string[i];
+    string[i] = string[count];
+    string[count] = temp;
+    count += 1;
+  }
+  string = string.join("");
+}
+
+
+reverse("hello");
