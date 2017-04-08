@@ -1,7 +1,10 @@
-function filterRange(arr,min,max) {
+var skylineHeights = (arr) => {
   var count = 0;
-  for(i=arr.length-1; i>0; i--) {
-    if(arr[i]>min && arr[i]<max) {
+  if(arr[arr.length-2]>arr[arr.length-1]) {
+     count++;
+   }
+  for(i=arr.length-3; i>=0; i--) {
+    if(arr[i]>arr[i+1] || arr[i]===arr[i+1] || arr[i]<=0) {
       for(j=i; j<arr.length-1; j++) {
         var temp = arr[j];
         arr[j] = arr[j+1];
@@ -19,4 +22,4 @@ function filterRange(arr,min,max) {
 }
 
 
-filterRange([12,34,56,67,78,90],43,79);
+skylineHeights([-1,1,1,7,3]);
